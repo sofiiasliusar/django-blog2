@@ -1,4 +1,4 @@
 .idea/
 db.sqlite3
 django_blog_school_2/__pycache__
-blog/__pycache__
+**/__pycache__
