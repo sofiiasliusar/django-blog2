@@ -35,12 +35,14 @@ class ArticleAdmin(admin.ModelAdmin):
     multiupload_form = True
     multiupload_list = False
     prepopulated_fields = {'slug': ('title',)}
-    raw_id_fields = ('category',)  # TODO ???
-    fieldsets = (  # TODO what is this and () inside is tuple? and why instead of [ use (
+    raw_id_fields = ('category',)  #  ???
+    fieldsets = (  #  what is this and () inside is tuple? and why instead of [ use (
+        # sections, yes, because it expects tuple
         ('', {
-            'fields': ('pub_date', 'title', 'description', 'main_page'),
+            'fields': ('category', 'pub_date', 'title', 'description', 'main_page'),
         }),
-        ((u'Додатково'), { # TODO grp is what
+        ((u'Додатково'), { #  grp is what
+            # django grappelli for better UI
             'classes': ('grp-collapse grp-closed',),
             'fields': ('slug',),
         }),
